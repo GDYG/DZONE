@@ -6,7 +6,7 @@ import Nevent from './routes/Nevent.js';
 const RouterConfig = (({ history }) => (
     <Router history={history}>
         <Switch>
-            <Route path='/' component={App}/>
+            <Route path='/' exact component={App}/>
             <Route path='/event' component={Nevent}/>
         </Switch>
     </Router>

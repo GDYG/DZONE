@@ -1,0 +1,79 @@
+.eventMain {
+    height: 100%;
+    width: 100%;
+    background-color: #FF8552;
+    box-sizing: border-box;
+    padding: .4375rem .625rem .375rem .625rem;
+}
+.eventMain header {
+    height: 44px;
+    line-height: 44px;
+    font-size: .5rem;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+}
+.eventMain header > span:nth-child(1) {
+    float: left;
+}
+.eventMain header a {
+    color: #fff;
+}
+.contents {
+    margin: 0;
+    padding: 0;
+    margin-top: .4375rem;
+    box-shadow: 0px 0px 10px 2px #E37A4E;
+    border-radius: 15px !important;
+    background-color: #fff;
+    overflow: hidden;
+}
+.contents li {
+    width: 100%;
+    height: 1.25rem;
+    line-height: 1.25rem;
+    text-align: center;
+    position: relative;
+}
+ul li {
+    list-style-type: none;
+}
+.contents li input {
+    width: 80%;
+    border: 0;
+    height: 60%;
+    border-bottom: 1.5px solid #eee;
+    font-size: .5rem;
+    color: #BDB9B2;
+}
+.contents li input::-webkit-input-placeholder {
+    font-size: .3rem;
+    color: #BDB9B2;
+}
+.contents li svg {
+    font-size: .3rem;
+    color: #BDB9B2;
+}
+.icon1 {
+    position: absolute;
+    right: .8rem;
+    bottom: .15rem;
+}
+
+.contents li:last-child {
+    height: 2.5rem;
+    line-height: 2.5rem;
+}
+.createEvent {
+    display: inline-block;
+    width: 90%;
+    height: 1.25rem;
+    line-height: 1.25rem;
+    background-color: #FF8552;
+    color: #fff;
+    font-size: .3125rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    text-align: center;
+    border-radius: .625rem;
+}
