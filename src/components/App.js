@@ -10,15 +10,15 @@ class App extends React.Component {
   render() {
     return (
       <div className='app'>
-          <span className='arc'></span>
+          <span className='arc1'></span>
           <div id='main'>
             <div className="bg bg-blur"></div>
             <div className="content content-front">
-                <h6>WELCOME</h6>
+                <span>WELCOME</span>
                 <p>这与您习惯不同。DZONE会尝试使您与自然休息和工作周期保持同步</p>
-                <div>
-                  <Link to='/event'><span>NEXT <RightOutlined /></span></Link>
-                </div>
+            </div>
+            <div className='nextLink'>
+              <Link to='/event'><span>NEXT <RightOutlined /></span></Link>
             </div>
           </div>
       </div>

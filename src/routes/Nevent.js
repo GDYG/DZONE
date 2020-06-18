@@ -1,62 +1,80 @@
 import React from 'react';
 import '../assets/css/event.css';
-import { CommentOutlined, TeamOutlined, FieldTimeOutlined, ArrowLeftOutlined, DownOutlined, CalendarOutlined } from '@ant-design/icons';
+import { CommentOutlined, TeamOutlined, ArrowLeftOutlined, DownOutlined } from '@ant-design/icons';
 import {Link} from 'dva/router';
-import { TimePicker } from 'antd';
+import { DatePicker, TimePicker, Input, AutoComplete } from 'antd';
+import moment from 'moment';
+
 class Nevent extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {  };
+        this.state = {  
+          value: null
+        };
+    }
+    onChange=(time)=> {
+      console.log(moment(time))
+      this.setState({
+        value: time
+      })
+    }
+    selectDate=(date, dateString)=>{
+      console.log(date, dateString);
+    }
+    onClick=()=> {
+      this.props.history.push({
+        pathname: '/seeEvent'
+      })
     }
     render() {
         return (
             <div className='eventMain'>
-            <TimePicker
-              onChange={onChange}
-              defaultOpenValue={moment('00:00:00', 'HH:mm:ss')}
-            />
                 <header><span><Link to='/'><ArrowLeftOutlined /></Link></span><span>New event</span></header>
                 <ul className='contents'>
-                    <li><input placeholder="Enter event name here" /></li>
                     <li>
-                    <input 
-                      placeholder="Enter event name here"
-                      className='iconInput'
+                      <Input 
+                        placeholder="Enter event name here"
+                        className='iconInput'
                       />
-                      <DownOutlined className='icon1' />
                     </li>
                     <li>
-                    <input 
-                      placeholder="Enter event name here"
-                      />
-                      <CalendarOutlined className='icon1' />
+                      <Input.Group compact>
+                        <AutoComplete
+                          placeholder="Select Event Type"
+                          options={[{ value: 'text 1' }, { value: 'text 2' }]}
+                        />
+                        <DownOutlined className='icon1 icon2' />
+                      </Input.Group>
                     </li>
                     <li>
-                    <input 
-                      placeholder="Enter event name here"
-                      />
-                      <FieldTimeOutlined className='icon1' />
+                      <DatePicker onChange={this.selectDate} placeholder="Set event date" />
                     </li>
                     <li>
-                    <input 
-                      placeholder="Enter event name here"
-                      />
-                      <FieldTimeOutlined className='icon1' />
+                      <TimePicker
+                        placeholder="Event start time"
+                        value={this.state.value} onChange={this.onChange} />
                     </li>
                     <li>
-                    <input 
-                      placeholder="Enter event name here"
+                      <TimePicker 
+                        placeholder="Event end time"
+                        value={this.state.value} onChange={this.onChange} />
+                    </li>
+                    <li>
+                      <Input 
+                        placeholder="Describe the event"
+                        className='iconInput'
                       />
                       <CommentOutlined className='icon1' />
                     </li>
                     <li>
-                    <input 
-                      placeholder="Enter event name here"
+                      <Input 
+                        placeholder="Whoid the event with"
+                        className='iconInput'
                       />
                       <TeamOutlined className='icon1' />
                     </li>
                     <li>
-                      <span className='createEvent'>CREATE EVENT</span>
+                      <span className='createEvent' onClick={this.onClick}>CREATE EVENT</span>
                     </li>
                 </ul>
             </div>
