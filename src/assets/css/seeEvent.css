@@ -54,6 +54,7 @@
     overflow-y: auto;
     box-sizing: border-box;
     padding: 10px 20px;
+    -webkit-overflow-scrolling: touch;
 }
 .firstRow {
     width: 100%;
@@ -91,6 +92,13 @@
     color: #fff;
 }
 .yellow .arc {
+    background-color: #fff;
+}
+.red {
+    background-color: #ED584A;
+    color: #fff;
+}
+.red .arc {
     background-color: #fff;
 }
 .white {
@@ -191,4 +199,7 @@ footer span {
 .addEvents svg {
     font-size: .625rem;
     vertical-align: inherit;
+}
+.footRight.active{
+    color: lightslategrey;
 }

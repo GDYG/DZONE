@@ -10,3 +10,6 @@
   .title {
       background-color: #fff;
   }
+.footLeft.active {
+    color: lightslategrey;
+}
